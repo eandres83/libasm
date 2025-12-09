@@ -14,6 +14,11 @@ SRCS = src/ft_strlen.s \
 
 OBJS = $(SRCS:.s=.o)
 
+SRCS_BONUS = src_bonus/ft_list_size.s \
+		src_bonus/ft_list_push_front.s \
+
+OBJS_BONUS = $(SRCS_BONUS:.s=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -25,12 +30,16 @@ $(NAME): $(OBJS)
 
 clean:
 	@echo "Limpiando archivos objeto ..."
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean:
 	@echo "Limpriando libreria ..."
 	$(RM) $(NAME)
 
+bonus: $(OBJS) $(OBJS_BONUS)
+	@echo "Done bonus"
+	$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean bonus re
