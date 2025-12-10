@@ -19,8 +19,8 @@ ft_strcmp:
 
 .fin:
 	movzx rax, al
-	movzx rbx, dl
-	sub rax, rbx
+	movzx rcx, dl
+	sub rax, rcx
 	ret
 
 .equal:

@@ -16,6 +16,7 @@ OBJS = $(SRCS:.s=.o)
 
 SRCS_BONUS = src_bonus/ft_list_size.s \
 		src_bonus/ft_list_push_front.s \
+		src_bonus/ft_list_sort.s \
 
 OBJS_BONUS = $(SRCS_BONUS:.s=.o)
 
